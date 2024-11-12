@@ -271,7 +271,7 @@ class Enemy(pg.sprite.Sprite):
         super().__init__()
         self.image = __class__.imgs
         self.rect = self.image.get_rect()
-        self.rect.center = 900, 0
+        self.rect.center = random.randint(300, 1000), 0
         self.vx, self.vy = 0, +6
         self.bound = WIDTH/2  # 停止位置
         self.state = "down"  # 降下状態or停止状態
@@ -457,8 +457,8 @@ def main():
                         gravity.add(Gravity(50))
                         mp.mp -= 50
                         
-                if event.type == pg.KEYDOWN and event.key == pg.K_TAB and  mp.mp > 75:
-                    mp.mp -= 75
+                if event.type == pg.KEYDOWN and event.key == pg.K_TAB and  mp.mp > 50:
+                    mp.mp -= 50
                     shields.add(Shield(bird, 400))
             screen.blit(bg_img, [0, 0])   
 
